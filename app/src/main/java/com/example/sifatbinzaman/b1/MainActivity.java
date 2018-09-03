@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
     private String email,password;
+
     String sUserName, sPassword;
 
     @Override
@@ -61,8 +62,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(),SecondActivity.class);
 
 
-                i.putExtra("myUser",sUserName);
-                i.putExtra("myPass",sPassword);
+                i.putExtra("Username",email);
+                i.putExtra("Password",password);
+                i.putExtra("flag", 1);
 
 //Fire that second activity
 
@@ -102,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(),SecondActivity.class);
                             i.putExtra("Username",email);
                             i.putExtra("Password",password);
+                            i.putExtra("flag", 2);
                             startActivity(i);
 
                             //updateUI(user);
